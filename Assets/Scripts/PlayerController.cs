@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float displace;
     public bool collisionDetected = false;
     public Vector2 force = new Vector2(0f, 500f);
+    public int lives;
     
     //controls
     bool pressCtrl;
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lives = 3;
         score = 0;
         displace = 5.0f;
         playerCollider = gameObject.GetComponent<BoxCollider2D>();
@@ -97,12 +99,11 @@ public class PlayerController : MonoBehaviour
     {
         score += 20;
         Debug.Log("Score is: " + score);
-        uiText.scoreUI.text = "score: " + score;
+        uiText.scoreUI.text = "Score: " + score;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Player hits " + collision.gameObject.name);
         collisionDetected = true;
     }
 

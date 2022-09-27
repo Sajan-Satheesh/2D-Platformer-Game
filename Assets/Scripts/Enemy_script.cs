@@ -17,6 +17,8 @@ public class Enemy_script : MonoBehaviour
         position = new Vector2(transform.position.x + speed *Time.deltaTime*scale.x, transform.position.y);
         transform.position = position;
     }
+
+
     // Update is called once per frame
     void Update()
     {

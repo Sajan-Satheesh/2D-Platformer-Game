@@ -6,9 +6,9 @@ public class Key_collectible : MonoBehaviour
     {
         if (collider.gameObject.TryGetComponent(out PlayerController playercollision))
         {
+            Debug.Log("key collected");
             playercollision.updateScore();
             Destroy(gameObject);
-            Debug.Log(playercollision.gameObject.name + "collected");
         }
     }
 }
