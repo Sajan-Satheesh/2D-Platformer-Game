@@ -12,19 +12,23 @@ public class EnemyAttack : MonoBehaviour
     {
         life = GameObject.Find("Canvas/Health").GetComponent<UI_life>();
     }
+    private void Attack(PlayerController player)
+    {
+        player.lives--;
+        if (player.lives > -1)
+        {
+            life.HealthUI(player.lives);
+        }
+        Tcurrent = Trunning + TnextReduction;
+        Debug.Log("Lives is : " + player.lives);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Tcurrent = 0f;
         Trunning = Time.time;
         if (collision.gameObject.TryGetComponent(out PlayerController player))
         {
-            player.lives--;
-            if (player.lives > -1)
-            {
-                life.HealthUI(player.lives);
-            }
-            Tcurrent = Trunning + TnextReduction;
-            Debug.Log("Lives is : " + player.lives);
+            Attack(player);
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -34,13 +38,7 @@ public class EnemyAttack : MonoBehaviour
             Trunning = Time.time;
             if (Trunning > Tcurrent)
             {
-                Tcurrent = Trunning + TnextReduction;
-                player.lives--;
-                if (player.lives > -1)
-                {
-                    life.HealthUI(player.lives);
-                }
-                Debug.Log("Lives is : " + player.lives);
+                Attack(player);
             }
             if (player.lives <= 0)
             {
