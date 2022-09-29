@@ -45,6 +45,7 @@ public class EnemyAttack : MonoBehaviour
             }
             if (player.lives <= 0)
             {
+                player.dead = true;
                 restartTrigger.Appear();
             }
         }

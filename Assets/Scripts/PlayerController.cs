@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public bool collisionDetected = false;
     public Vector2 force = new Vector2(0f, 500f);
     public int lives;
+    public bool dead;
     
     //controls
     bool pressCtrl;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dead = false;
         lives = 3;
         score = 0;
         displace = 5.0f;
@@ -111,15 +113,18 @@ public class PlayerController : MonoBehaviour
     public void Update()
     {
         //understand dif between GetAxis and GetAxisRaw
+        if (!dead)
+        {
+            movement = Input.GetAxisRaw("Horizontal");
+            upButton = Input.GetAxisRaw("Vertical");
+            pressCtrl = Input.GetKeyDown(KeyCode.LeftControl);
+            releaseCtrl = Input.GetKeyUp(KeyCode.LeftControl);
 
-        movement = Input.GetAxisRaw("Horizontal");
-        upButton = Input.GetAxisRaw("Vertical");
-        pressCtrl = Input.GetKeyDown(KeyCode.LeftControl);
-        releaseCtrl = Input.GetKeyUp(KeyCode.LeftControl);
-
-        Run(movement);
-        Jump(upButton);
-        Crouch();
+            Run(movement);
+            Jump(upButton);
+            Crouch();
+        }
+        
 
     }
 }
