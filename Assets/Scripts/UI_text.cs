@@ -10,7 +10,7 @@ public class UI_text : MonoBehaviour{
     private void Awake()
     {
         scoreUI = GetComponent<TextMeshProUGUI>();
-        scoreUI.text = "score : 0";
+        scoreUI.text = "Score : 0";
     }
 }
   

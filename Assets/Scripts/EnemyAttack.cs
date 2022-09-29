@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class EnemyAttack : MonoBehaviour
 {
     public float TnextReduction = 2f;   
     private float Tcurrent;
     private float Trunning;
-    UI_life life; 
+    UI_life life;
+    public RestartScreen restartTrigger;
 
     private void Awake()
     {
@@ -42,7 +45,7 @@ public class EnemyAttack : MonoBehaviour
             }
             if (player.lives <= 0)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                restartTrigger.Appear();
             }
         }
     }

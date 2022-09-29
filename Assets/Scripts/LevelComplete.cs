@@ -8,9 +8,9 @@ public class LevelComplete : MonoBehaviour
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         Debug.Log("Level completed");
         sceneIndex++;
-        if (sceneIndex == 3)
+        if (sceneIndex == 4)
         {
-            sceneIndex = 0;
+            sceneIndex = 1;
         }
 
         SceneManager.LoadScene(sceneIndex);
