@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 7905404700902946757}
   - component: {fileID: 2743912538230189033}
   - component: {fileID: 1626061969}
+  - component: {fileID: 2730751314956727402}
   m_Layer: 8
   m_Name: Anim_IDLE_00001
   m_TagString: Untagged
@@ -249,8 +250,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorParameter: {fileID: 4664874661343997047}
   playerCollider: {fileID: 2743912538230189033}
+  uiText: {fileID: 0}
   displace: 8
-  jumpForce: 500
   collisionDetected: 0
   force: {x: 0, y: 150}
+  lives: 0
+  dead: 0
+--- !u!114 &2730751314956727402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7363512843403518122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e54ff83aae3d15746b111ef5c37d5078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   uiText: {fileID: 0}

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class UI_life : MonoBehaviour
 {
-    public GameObject[] lives;
+    public GameObject[] lives = new GameObject[3];
 
-    public void HealthUI(int life)
+    public void ReduceHealth(int life)
     {
         lives[life].SetActive(false);
     }
