@@ -6,18 +6,19 @@ public class EnemyAttack : MonoBehaviour
     public float TnextReduction = 2f;   
     private float Tcurrent;
     private float Trunning;
+<<<<<<< Updated upstream
     UI_life life; 
+=======
+    public UI_life life;
+    public RestartScreen restartTrigger;
+>>>>>>> Stashed changes
 
-    private void Awake()
-    {
-        life = GameObject.Find("Canvas/Health").GetComponent<UI_life>();
-    }
     private void Attack(PlayerController player)
     {
         player.lives--;
         if (player.lives > -1)
         {
-            life.HealthUI(player.lives);
+            life.ReduceHealth(player.lives);
         }
         Tcurrent = Trunning + TnextReduction;
         Debug.Log("Lives is : " + player.lives);

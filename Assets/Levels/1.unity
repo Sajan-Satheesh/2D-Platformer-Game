@@ -504,6 +504,19 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 2.4
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
+        type: 3}
+      propertyPath: life
+      value: 
+      objectReference: {fileID: 726516073}
+    - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
+        type: 3}
+      propertyPath: restartTrigger
+      value: 
+      objectReference: {fileID: 726516072}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a3d924d7b833d4ab871854087fe022, type: 3}
 --- !u!4 &226386108 stripped
@@ -609,6 +622,19 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
+        type: 3}
+      propertyPath: life
+      value: 
+      objectReference: {fileID: 726516073}
+    - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
+        type: 3}
+      propertyPath: restartTrigger
+      value: 
+      objectReference: {fileID: 726516072}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a3d924d7b833d4ab871854087fe022, type: 3}
 --- !u!4 &269047750 stripped
@@ -1005,6 +1031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -1030,6 +1057,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720867380}
   m_CullTransparentMesh: 0
+=======
+--- !u!114 &726516073 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 365876630398176569, guid: 48e8f5a1f16bea848906c32174654313,
+    type: 3}
+  m_PrefabInstance: {fileID: 726516071}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4cd9c896d2fc0e478abf8a3e100e71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> Stashed changes
 --- !u!1 &769884652
 GameObject:
   m_ObjectHideFlags: 0
@@ -4049,6 +4090,19 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
+        type: 3}
+      propertyPath: life
+      value: 
+      objectReference: {fileID: 726516073}
+    - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
+        type: 3}
+      propertyPath: restartTrigger
+      value: 
+      objectReference: {fileID: 726516072}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a3d924d7b833d4ab871854087fe022, type: 3}
 --- !u!4 &1145745728 stripped
@@ -4198,6 +4252,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2730751314956727402, guid: 83eb8097c234952418c7310bc88b8b02,
+        type: 3}
+      propertyPath: uiText
+      value: 
+      objectReference: {fileID: 1676402248}
     - target: {fileID: 7363512843403518122, guid: 83eb8097c234952418c7310bc88b8b02,
         type: 3}
       propertyPath: m_Name
@@ -5362,6 +5421,19 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
+        type: 3}
+      propertyPath: life
+      value: 
+      objectReference: {fileID: 726516073}
+    - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
+        type: 3}
+      propertyPath: restartTrigger
+      value: 
+      objectReference: {fileID: 726516072}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a3d924d7b833d4ab871854087fe022, type: 3}
 --- !u!4 &2146571557 stripped
