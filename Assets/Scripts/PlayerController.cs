@@ -6,13 +6,11 @@ public class PlayerController : MonoBehaviour
 
 {
     Rigidbody2D playerRb;
-    public Animator animatorParameter;
-    public BoxCollider2D playerCollider;
-    public UI_text uiText;
-    int score;
-    public float displace;
-    public bool collisionDetected = false;
-    public Vector2 force = new Vector2(0f, 500f);
+    [SerializeField] private Animator animatorParameter;
+    [SerializeField] private BoxCollider2D playerCollider;
+    [SerializeField]private float displace;
+    private bool collisionDetected = false;
+    [SerializeField] private Vector2 force = new Vector2(0f, 500f);
     public int lives;
     public bool dead;
     
@@ -36,7 +34,6 @@ public class PlayerController : MonoBehaviour
     {
         dead = false;
         lives = 3;
-        score = 0;
         displace = 5.0f;
         playerCollider = gameObject.GetComponent<BoxCollider2D>();
         playerRb = gameObject.GetComponent<Rigidbody2D>();
@@ -96,12 +93,6 @@ public class PlayerController : MonoBehaviour
             playerCollider.size = new Vector2(size.x, 2.1f);
             playerCollider.offset = new Vector2(offset.x, 0.98f);
         }
-    }
-    public void updateScore()
-    {
-        score += 20;
-        Debug.Log("Score is: " + score);
-        uiText.scoreUI.text = "Score: " + score;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

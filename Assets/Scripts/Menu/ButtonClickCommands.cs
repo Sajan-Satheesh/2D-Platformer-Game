@@ -2,21 +2,45 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class ButtonClickCommands : MonoBehaviour
 {
-    public Button start;
-    public Button quit;
+    [SerializeField] private Button play;
+    [SerializeField] private Button start;
+    [SerializeField] private Button quit;
+    [SerializeField] private Button back;
+
+    [SerializeField] private GameObject LevelPanel;
 
     private void Awake()
     {
-        start.onClick.AddListener(LoadNew);
+        LevelPanel.SetActive(false);
+        play.onClick.AddListener(LoadNew);
+        start.onClick.AddListener(LevelSelection);
         quit.onClick.AddListener(QuitGame);
+        back.onClick.AddListener(LevelSelection);
     }
+
+    private void LevelSelection()
+    {
+        if (LevelPanel.activeSelf)
+        {
+            LevelPanel.SetActive(false);
+        }
+        else LevelPanel.SetActive(true);
+    }
+
     void LoadNew()
     {
-        SceneManager.LoadScene(1);
+        if (LevelManager.resume == true)
+        {
+            SceneManager.LoadScene(LevelManager.getCurrentLevel());
+        }
+        else SceneManager.LoadScene(1);
     }
+
+
 
     // Update is called once per frame
 

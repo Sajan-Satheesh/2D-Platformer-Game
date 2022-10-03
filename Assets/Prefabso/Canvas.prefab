@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 365876628951606740}
   - component: {fileID: 365876628951606742}
   - component: {fileID: 365876628951606741}
-  - component: {fileID: 365876628951606743}
+  - component: {fileID: 4756158730302476113}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &365876628951606743
+--- !u!114 &4756158730302476113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
