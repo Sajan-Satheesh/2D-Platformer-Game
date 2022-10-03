@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public float TnextReduction = 2f;   
+    [SerializeField] private float TnextReduction = 2f;   
     private float Tcurrent;
     private float Trunning;
     UI_life life;

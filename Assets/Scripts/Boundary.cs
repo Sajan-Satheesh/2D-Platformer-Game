@@ -4,7 +4,7 @@ using UnityEngine;
 public class Boundary : MonoBehaviour
 {
     Enemy_script thisEnemy;
-    public void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.TryGetComponent(out Enemy_script enemy))
         {
@@ -12,7 +12,7 @@ public class Boundary : MonoBehaviour
             thisEnemy = enemy;
         }
     }
-    public void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out PlayerController player))
         {

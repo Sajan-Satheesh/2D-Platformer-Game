@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class RestartScreen : MonoBehaviour
 {
-    public Button restart;
-    public Button mainmenu;
+    [SerializeField] private Button restart;
+    [SerializeField] private Button mainmenu;
     // Start is called before the first frame update
 
     private void Awake()
