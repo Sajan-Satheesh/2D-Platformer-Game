@@ -1,0 +1,50 @@
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class EnemyAttack : MonoBehaviour
+{
+    public float TnextReduction = 2f;   
+    private float Tcurrent;
+    private float Trunning;
+<<<<<<< Updated upstream
+    UI_life life; 
+=======
+    public UI_life life;
+    public RestartScreen restartTrigger;
+>>>>>>> Stashed changes
+
+    private void Attack(PlayerController player)
+    {
+        player.lives--;
+        if (player.lives > -1)
+        {
+            life.ReduceHealth(player.lives);
+        }
+        Tcurrent = Trunning + TnextReduction;
+        Debug.Log("Lives is : " + player.lives);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Tcurrent = 0f;
+        Trunning = Time.time;
+        if (collision.gameObject.TryGetComponent(out PlayerController player))
+        {
+            Attack(player);
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out PlayerController player))
+        {
+            Trunning = Time.time;
+            if (Trunning > Tcurrent)
+            {
+                Attack(player);
+            }
+            if (player.lives <= 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
+    }
+}
