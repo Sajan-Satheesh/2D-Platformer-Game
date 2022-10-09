@@ -1,0 +1,41 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LevelSingleton : MonoBehaviour
+{
+    private static LevelSingleton levelinstance;
+    public static LevelSingleton levelInstance { get { return levelinstance; }}
+
+    private void Awake()
+    {
+        if(levelinstance == null)
+        {
+            levelinstance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    public LevelStatus GetLevelStatus(string level)
+    {
+        LevelStatus levelStatus = (LevelStatus)PlayerPrefs.GetInt(level);
+        return levelStatus;
+    }
+
+    public void SetLevelStatus(string level, LevelStatus levelStatus)
+    {
+        PlayerPrefs.SetInt(level, (int)levelStatus);
+    }
+
+/*    public void ResetData(string level, LevelStatus levelStatus)
+    {
+        for(int i=1; i<level.Length; i++)
+        {
+            PlayerPrefs.SetInt(level,(int)LevelStatus.locked);
+        }
+    }*/
+
+}

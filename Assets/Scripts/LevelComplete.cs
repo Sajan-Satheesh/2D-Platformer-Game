@@ -6,7 +6,13 @@ public class LevelComplete : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        string sceneName = SceneManager.GetActiveScene().name;
         Debug.Log("Level completed");
+        LevelSingleton.levelInstance.SetLevelStatus(sceneName, LevelStatus.completed);
+        if (sceneIndex < 2)
+        {
+            LevelSingleton.levelInstance.SetLevelStatus(SceneManager.GetSceneByBuildIndex(sceneIndex+1).name, LevelStatus.unlocked);
+        }
         sceneIndex++;
         if (sceneIndex == 4)
         {
