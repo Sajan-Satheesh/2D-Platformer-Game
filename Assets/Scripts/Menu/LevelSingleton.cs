@@ -30,12 +30,17 @@ public class LevelSingleton : MonoBehaviour
         PlayerPrefs.SetInt(level, (int)levelStatus);
     }
 
-/*    public void ResetData(string level, LevelStatus levelStatus)
+    public void ResetData()
     {
-        for(int i=1; i<level.Length; i++)
+        Debug.Log("resetting data");
+        string level = "";
+        for (int i = 2; i < 4; i++)
         {
-            PlayerPrefs.SetInt(level,(int)LevelStatus.locked);
+            level += i;
+            PlayerPrefs.SetInt(level, (int)LevelStatus.locked);
+            Debug.Log("Level "+level+ " locked");
+            level = "";
         }
-    }*/
+    }
 
 }

@@ -24,6 +24,7 @@ public class ButtonClickCommands : MonoBehaviour
 
     private void LevelSelection()
     {
+        Debug.Log("levelSelct0");
         if (LevelPanel.activeSelf)
         {
             LevelPanel.SetActive(false);
@@ -47,7 +48,7 @@ public class ButtonClickCommands : MonoBehaviour
 
     private void QuitGame()
     {
-        # if UNITY_EDITOR
+        #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
         Application.Quit();

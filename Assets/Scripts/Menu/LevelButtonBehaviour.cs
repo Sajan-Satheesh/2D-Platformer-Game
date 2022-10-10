@@ -10,11 +10,22 @@ public class LevelButtonBehaviour : MonoBehaviour
 {
     private Button button;
     public string LevelName;
+    public GameObject img;
 
     private void Awake()
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(onClick);
+        CheckLockStatus();
+    }
+
+    private void CheckLockStatus()
+    {
+        if (PlayerPrefs.GetInt(LevelName) == (int)LevelStatus.locked)
+        {
+            img.SetActive(true);
+        }
+        else img.SetActive(false);
     }
 
     private void onClick()
