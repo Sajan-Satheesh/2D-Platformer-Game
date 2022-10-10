@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 365876629341401820, guid: 48e8f5a1f16bea848906c32174654313,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 365876630504095946, guid: 48e8f5a1f16bea848906c32174654313,
         type: 3}
       propertyPath: m_Name
@@ -264,6 +269,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3651cba7a33bed4683008c9e0ca2233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &788753804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 30835252212380428, guid: 48e8f5a1f16bea848906c32174654313,
+    type: 3}
+  m_PrefabInstance: {fileID: 788753801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &972274809
 GameObject:
   m_ObjectHideFlags: 0
@@ -3420,6 +3431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd82de9444c6f0438e6f619d805bf63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelCompScreen: {fileID: 788753804}
 --- !u!61 &2049287921
 BoxCollider2D:
   m_ObjectHideFlags: 0

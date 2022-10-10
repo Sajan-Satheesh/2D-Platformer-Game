@@ -34,7 +34,7 @@ public class LevelSingleton : MonoBehaviour
     {
         Debug.Log("resetting data");
         string level = "";
-        for (int i = 2; i < 4; i++)
+        for (int i = 2; i < 6; i++)
         {
             level += i;
             PlayerPrefs.SetInt(level, (int)LevelStatus.locked);
