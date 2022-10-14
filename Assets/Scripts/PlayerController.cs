@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 force = new Vector2(0f, 500f);
     public int lives;
     public bool dead;
+    public bool deadSound;
     
     //controls
     bool pressCtrl;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     float upButton;
     float movement;
     bool jump;
+    bool walking;
 
     //positional parameters
     Vector2 position;
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         dead = false;
+        deadSound = false;
         lives = 3;
         displace = 5.0f;
         playerCollider = gameObject.GetComponent<BoxCollider2D>();
@@ -41,13 +44,17 @@ public class PlayerController : MonoBehaviour
     }
     void Run(float key)
     {
+        walking = false;
         position = transform.localPosition;
         scale = transform.localScale;
         size = playerCollider.size;
         offset = playerCollider.offset;
 
         animatorParameter.SetFloat("speed", Mathf.Abs(key));
-
+        if (key != 0)
+        {
+            walking = true;
+        }
         if (key < 0)
         {
             scale.x = -1f * Mathf.Abs(scale.x);
@@ -100,10 +107,22 @@ public class PlayerController : MonoBehaviour
         collisionDetected = true;
     }
 
+    private void FixedUpdate()
+    {
+        if (walking && collisionDetected)
+        {
+            SoundManager.Instance.PlayPlayer(Sounds.PlayerRun);
+        }
+    }
+   
     // Update is called once per frame
     public void Update()
     {
-        //understand dif between GetAxis and GetAxisRaw
+        //understand dif betw
+        //
+        //
+        //
+        //een GetAxis and GetAxisRaw
         if (!dead)
         {
             movement = Input.GetAxisRaw("Horizontal");
@@ -115,7 +134,10 @@ public class PlayerController : MonoBehaviour
             Jump(upButton);
             Crouch();
         }
-        
-
+        else if(dead && !deadSound)
+        {
+            SoundManager.Instance.PlayGameSfx(Sounds.PlayerDeath);
+            deadSound = true;
+        }
     }
 }

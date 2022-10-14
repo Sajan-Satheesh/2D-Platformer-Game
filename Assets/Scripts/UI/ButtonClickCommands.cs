@@ -24,21 +24,24 @@ public class ButtonClickCommands : MonoBehaviour
 
     private void LevelSelection()
     {
-        Debug.Log("levelSelct0");
+        
         if (LevelPanel.activeSelf)
         {
             LevelPanel.SetActive(false);
         }
         else LevelPanel.SetActive(true);
+        SoundManager.Instance.PlaySfx(Sounds.Click);
     }
 
     void LoadNew()
     {
+       
         if (LevelManager.resume == true)
         {
             SceneManager.LoadScene(LevelManager.getCurrentLevel());
         }
         else SceneManager.LoadScene(1);
+        SoundManager.Instance.PlaySfx(Sounds.Click);
     }
 
 

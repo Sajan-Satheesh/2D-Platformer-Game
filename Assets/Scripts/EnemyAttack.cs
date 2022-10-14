@@ -17,6 +17,7 @@ public class EnemyAttack : MonoBehaviour
     }
     private void Attack(PlayerController player)
     {
+        SoundManager.Instance.PlaySfx(Sounds.EnemeyAttack);
         player.lives--;
         if (player.lives > -1)
         {
