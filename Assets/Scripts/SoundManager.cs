@@ -74,10 +74,6 @@ public class SoundManager : MonoBehaviour
         {
             EnemySounds.PlayOneShot(audioClip);
         }
-        else
-        {
-            Debug.Log("Audio not forund for " + sound);
-        }
     }
     public void PlayPlayer(Sounds sound)
     {
@@ -85,10 +81,6 @@ public class SoundManager : MonoBehaviour
         if (audioClip != null && !PLayerSounds.isPlaying)
         {
             PLayerSounds.PlayOneShot(audioClip);
-        }
-        else
-        {
-            Debug.Log("Audio not forund for " + sound);
         }
     }
     public void PlayGameSfx(Sounds sound)
@@ -130,5 +122,5 @@ public class SoundManager : MonoBehaviour
 public class SoundType
 {
     public Sounds soundName;
-    public AudioClip audioClip;
+    public  AudioClip audioClip;
 }

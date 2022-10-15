@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     bool releaseCtrl;
     float upButton;
     float movement;
+    int jumpTimes;
     bool jump;
     bool walking;
 
@@ -80,15 +81,29 @@ public class PlayerController : MonoBehaviour
         jump = false;
         if (collisionDetected)
         {
-            if (key > 0)
+            if (key > 0 && jumpTimes>0)
             {
                 jump = true;
                 playerRb.AddForce(force, ForceMode2D.Impulse);
                 collisionDetected = false;
+                jumpTimes--;
+                Debug.Log(jumpTimes);
+                
             }
             animatorParameter.SetBool("jump", jump);
         }
 
+    }
+
+    void DoubleJump()
+    {
+        var downwards = transform.InverseTransformDirection(playerRb.velocity).y;
+        Debug.Log(downwards);
+
+        if (downwards<0 )
+        {
+            collisionDetected = true;
+        }
     }
     void Crouch()
     {
@@ -112,6 +127,11 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         collisionDetected = true;
+        jumpTimes = 2;
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        collisionDetected = false;
     }
 
     private void FixedUpdate()
@@ -139,6 +159,7 @@ public class PlayerController : MonoBehaviour
 
             Run(movement);
             Jump(upButton);
+            DoubleJump();
             Crouch();
         }
         else if(dead && !deadSound)
