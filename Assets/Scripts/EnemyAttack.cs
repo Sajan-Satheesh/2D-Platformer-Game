@@ -21,7 +21,7 @@ public class EnemyAttack : MonoBehaviour
         player.lives--;
         if (player.lives > -1)
         {
-            life.HealthUI(player.lives);
+            life.ReduceHealthUI(player.lives);
         }
         Tcurrent = Trunning + TnextReduction;
         Debug.Log("Lives is : " + player.lives);

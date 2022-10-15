@@ -14,9 +14,9 @@ public class Enemy_script : MonoBehaviour
     }
     void Walk()
     {
-        SoundManager.Instance.PlayEnemy(Sounds.EnemeyWalk);
         position = new Vector2(transform.position.x + speed *Time.deltaTime*scale.x, transform.position.y);
         transform.position = position;
+        SoundManager.Instance.PlayEnemy(Sounds.EnemeyWalk);
     }
 
 

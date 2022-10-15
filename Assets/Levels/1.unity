@@ -4004,6 +4004,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2487968368527106894, guid: 83eb8097c234952418c7310bc88b8b02,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487968368527106894, guid: 83eb8097c234952418c7310bc88b8b02,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487968368527106894, guid: 83eb8097c234952418c7310bc88b8b02,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 12.13
+      objectReference: {fileID: 0}
     - target: {fileID: 3982872017093310062, guid: 83eb8097c234952418c7310bc88b8b02,
         type: 3}
       propertyPath: uiText
@@ -4014,7 +4029,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1131065102455404990, guid: 83eb8097c234952418c7310bc88b8b02, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 83eb8097c234952418c7310bc88b8b02, type: 3}
 --- !u!4 &1368724580 stripped
 Transform:

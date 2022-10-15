@@ -10,7 +10,10 @@ public enum Sounds
     PlayerDeath,
     EnemeyAttack,
     EnemeyWalk,
-    Bgm
+    Bgm,
+    Win,
+    Lose,
+    LevelStart
 }
 public class SoundManager : MonoBehaviour
 {
@@ -21,6 +24,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource soundEffect;
     public AudioSource Bgm;
     public AudioSource GameSoundEffects;
+    public AudioSource GameSFX2;
     public AudioSource PLayerSounds;
     public AudioSource EnemySounds;
     public SoundType[] Sounds;
@@ -99,10 +103,22 @@ public class SoundManager : MonoBehaviour
             Debug.Log("Audio not forund for " + sound);
         }
     }
+    public void PlayGameSFX2(Sounds sound)
+    {
+        AudioClip audioClip = getAudioClip(sound);
+        if (audioClip != null )
+        {
+            GameSFX2.PlayOneShot(audioClip);
+        }
+        else
+        {
+            Debug.Log("Audio not forund for " + sound);
+        }
+    }
     private AudioClip getAudioClip(Sounds sound)
     {
         SoundType soundType = Array.Find(Sounds, item => item.soundName == sound);
-        if (soundType != null)
+        if (soundType != null )
         {
             return soundType.audioClip;
         }

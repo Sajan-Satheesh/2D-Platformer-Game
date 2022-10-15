@@ -7,6 +7,7 @@ public class LevelComplete : MonoBehaviour
     public GameObject LevelCompScreen;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        SoundManager.Instance.PlayGameSFX2(Sounds.Win);
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         string sceneName = SceneManager.GetActiveScene().name;
         Debug.Log("Level completed");
@@ -22,6 +23,8 @@ public class LevelComplete : MonoBehaviour
             sceneIndex = 1;
         }
         LevelManager.setCurrentLevel(sceneIndex);
+        
         LevelCompScreen.SetActive(true);
+        
     }
 }

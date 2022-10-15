@@ -14,6 +14,8 @@ public class PlayerDead : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerController player))
         {
+            SoundManager.Instance.PlayGameSFX2(Sounds.Lose);
+            DeadParticle.SimulateDeadParticle();
             restartTrigger.Appear();
         }
     }

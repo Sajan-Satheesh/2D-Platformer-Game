@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public int lives;
     public bool dead;
     public bool deadSound;
+    /*DeadParticle deadParticle;*/
     
     //controls
     bool pressCtrl;
@@ -32,8 +33,14 @@ public class PlayerController : MonoBehaviour
 
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        /*deadParticle = gameObject.GetComponent<DeadParticle>();*/
+        SoundManager.Instance.PlayGameSFX2(Sounds.LevelStart);
+    }
     void Start()
     {
+        
         dead = false;
         deadSound = false;
         lives = 3;
@@ -137,7 +144,9 @@ public class PlayerController : MonoBehaviour
         else if(dead && !deadSound)
         {
             SoundManager.Instance.PlayGameSfx(Sounds.PlayerDeath);
+            SoundManager.Instance.PlayGameSFX2(Sounds.Lose);
             deadSound = true;
+            DeadParticle.SimulateDeadParticle();
         }
     }
 }
