@@ -116,7 +116,7 @@ ParticleSystem:
   m_GameObject: {fileID: 6576619872101103007}
   serializedVersion: 6
   lengthInSec: 0.5
-  simulationSpeed: 1
+  simulationSpeed: 5
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -190,7 +190,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 12.13
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4864,7 +4864,6 @@ GameObject:
   - component: {fileID: 2743912538230189033}
   - component: {fileID: 1626061969}
   - component: {fileID: 3982872017093310062}
-  - component: {fileID: 1131065102455404990}
   m_Layer: 8
   m_Name: Anim_IDLE_00001
   m_TagString: Untagged
@@ -5036,15 +5035,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 0}
---- !u!114 &1131065102455404990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7363512843403518122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1662964da4010044a0659e6de41b08e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

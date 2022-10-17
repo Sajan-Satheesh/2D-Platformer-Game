@@ -7,7 +7,7 @@ public class DeadParticle : MonoBehaviour
     public static ParticleSystem DeadSimulation;
     private void Awake()
     {
-        DeadSimulation = gameObject.GetComponent<ParticleSystem>();
+        DeadSimulation = this.GetComponent<ParticleSystem>();
     }
     // Start is called before the first frame update
     public static void SimulateDeadParticle()

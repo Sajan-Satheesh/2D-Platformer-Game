@@ -87,7 +87,6 @@ public class PlayerController : MonoBehaviour
                 playerRb.AddForce(force, ForceMode2D.Impulse);
                 collisionDetected = false;
                 jumpTimes--;
-                Debug.Log(jumpTimes);
                 
             }
             animatorParameter.SetBool("jump", jump);
@@ -98,7 +97,7 @@ public class PlayerController : MonoBehaviour
     void DoubleJump()
     {
         var downwards = transform.InverseTransformDirection(playerRb.velocity).y;
-        Debug.Log(downwards);
+        /*Debug.Log(downwards);*/
 
         if (downwards<0 )
         {
