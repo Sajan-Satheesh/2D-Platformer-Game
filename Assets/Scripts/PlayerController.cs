@@ -34,14 +34,10 @@ public class PlayerController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    private void Awake()
-    {
-        /*deadParticle = gameObject.GetComponent<DeadParticle>();*/
-        SoundManager.Instance.PlayGameSFX2(Sounds.LevelStart);
-    }
+
     void Start()
     {
-        
+        SoundManager.Instance.PlayGameSFX2(Sounds.LevelStart);
         dead = false;
         deadSound = false;
         lives = 3;
