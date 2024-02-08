@@ -20,8 +20,6 @@ public class Boundary : MonoBehaviour
             {
                 thisEnemy.scale.x *= -1f;
             }
-
-            /*enemy.speed *= -1;*/
         }
     }
 }

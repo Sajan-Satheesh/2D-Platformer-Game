@@ -30,7 +30,7 @@ public class ButtonClickCommands : MonoBehaviour
             LevelPanel.SetActive(false);
         }
         else LevelPanel.SetActive(true);
-        SoundManager.Instance.PlaySfx(Sounds.Click);
+        SoundManager.Instance?.PlaySfx(Sounds.Click);
     }
 
     void LoadNew()
@@ -41,7 +41,7 @@ public class ButtonClickCommands : MonoBehaviour
             SceneManager.LoadScene(LevelManager.getCurrentLevel());
         }
         else SceneManager.LoadScene(1);
-        SoundManager.Instance.PlaySfx(Sounds.Click);
+        SoundManager.Instance?.PlaySfx(Sounds.Click);
     }
 
 

@@ -16,7 +16,7 @@ public class ResetLevels : MonoBehaviour
     private void Resort()
     {
         Debug.Log("clicked Reset");
-        LevelSingleton.levelInstance.ResetData();
+        LevelSingleton.levelInstance?.ResetData();
         ActivateButtons();
     }
     void ActivateButtons()

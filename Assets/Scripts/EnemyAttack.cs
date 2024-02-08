@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [SerializeField] private float TnextReduction = 2f;   
-    private float Tcurrent;
-    private float Trunning;
+    [SerializeField] private float attackingTimeInterval = 2f;   
+    private float targetTime;
+    private float currentTime;
     UI_life life;
-    public RestartScreen restartTrigger;
+    public RestartScreen restartScreen;
 
     private void Awake()
     {
@@ -17,37 +17,36 @@ public class EnemyAttack : MonoBehaviour
     }
     private void Attack(PlayerController player)
     {
-        SoundManager.Instance.PlaySfx(Sounds.EnemeyAttack);
+        SoundManager.Instance?.PlaySfx(Sounds.EnemeyAttack);
         player.lives--;
         if (player.lives > -1)
         {
             life.ReduceHealthUI(player.lives);
         }
-        Tcurrent = Trunning + TnextReduction;
+        targetTime = currentTime + attackingTimeInterval;
         Debug.Log("Lives is : " + player.lives);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Tcurrent = 0f;
-        Trunning = Time.time;
         if (collision.gameObject.TryGetComponent(out PlayerController player))
         {
-            Attack(player);
+            targetTime = 0f;
+            currentTime = Time.time;
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent(out PlayerController player))
         {
-            Trunning = Time.time;
-            if (Trunning > Tcurrent)
+            currentTime = Time.time;
+            if (currentTime > targetTime)
             {
                 Attack(player);
             }
             if (player.lives <= 0)
             {
                 player.dead = true;
-                restartTrigger.Appear();
+                restartScreen.Appear();
             }
         }
     }

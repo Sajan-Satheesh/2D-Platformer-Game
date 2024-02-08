@@ -14,16 +14,16 @@ public class Enemy_script : MonoBehaviour
     }
     void Walk()
     {
+        transform.localScale = scale;
         position = new Vector2(transform.position.x + speed *Time.deltaTime*scale.x, transform.position.y);
         transform.position = position;
-        SoundManager.Instance.PlayEnemy(Sounds.EnemeyWalk);
+        SoundManager.Instance?.PlayEnemy(Sounds.EnemeyWalk);
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        transform.localScale = scale;
         Walk();
     }
 }
