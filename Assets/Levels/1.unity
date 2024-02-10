@@ -361,7 +361,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &136345150
 GameObject:
@@ -396,8 +396,10 @@ Transform:
   - {fileID: 41168455}
   - {fileID: 1486159183}
   - {fileID: 2146571557}
+  - {fileID: 1029701991}
+  - {fileID: 517147304}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &226386107
 PrefabInstance:
@@ -721,8 +723,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517147303}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.63784, y: 0.17062223, z: -2.5255585}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -24.093037, y: 5.3758426, z: 855.08374}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -730,8 +732,8 @@ Transform:
   - {fileID: 1145745728}
   - {fileID: 226386108}
   - {fileID: 269047750}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 136345151}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &690021453 stripped
 Transform:
@@ -774,7 +776,7 @@ PrefabInstance:
     - target: {fileID: 365876630504095950, guid: 48e8f5a1f16bea848906c32174654313,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 365876630504095950, guid: 48e8f5a1f16bea848906c32174654313,
         type: 3}
@@ -3753,7 +3755,7 @@ GameObject:
   - component: {fileID: 1029701990}
   - component: {fileID: 1029701989}
   m_Layer: 0
-  m_Name: LEVEL1text
+  m_Name: Level text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3769,12 +3771,12 @@ TextMesh:
   m_GameObject: {fileID: 1029701988}
   m_Text: LEVEL 1
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.1
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 7
+  m_FontSize: 80
   m_FontStyle: 1
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -3831,12 +3833,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029701988}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.08, y: 1.07, z: 0}
+  m_LocalPosition: {x: -44.810875, y: 6.2752204, z: 857.6093}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 136345151}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1145745727
 PrefabInstance:

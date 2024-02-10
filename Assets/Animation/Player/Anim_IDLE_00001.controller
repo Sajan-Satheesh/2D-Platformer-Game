@@ -386,10 +386,10 @@ AnimatorStateTransition:
   m_TransitionOffset: 0
   m_ExitTime: 0.75
   m_HasExitTime: 0
-  m_HasFixedDuration: 1
+  m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1109 &4287631015601459623
 AnimatorTransition:
   m_ObjectHideFlags: 1
@@ -464,7 +464,7 @@ AnimatorState:
   m_PrefabAsset: {fileID: 0}
   m_Name: PlayerJump
   m_Speed: 1
-  m_CycleOffset: 1
+  m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8385744353096840824}
   - {fileID: 6609518276471559486}

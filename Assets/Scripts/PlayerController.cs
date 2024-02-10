@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -73,17 +74,19 @@ public class PlayerController : MonoBehaviour
                 scale.x = Mathf.Abs(scale.x);
                 direction = Vector2.right * speed;
             }
+            if (grounded)
+            {
+                playerRb.velocity = direction;
+                transform.localScale = scale;
+            }
+            else if (playerRb.velocity.magnitude < speed) playerRb.AddForce(direction,ForceMode2D.Impulse);
         }
-        else if (walking)
+        else if (walking && grounded)
         {
             walking = false;
             direction = Vector2.zero;
         }
-        if (grounded && walking)
-        {
-            playerRb.velocity = direction;
-            transform.localScale = scale;
-        }
+        
     }
 
     void Jump(float jumpKey)
@@ -161,6 +164,23 @@ public class PlayerController : MonoBehaviour
             SoundManager.Instance?.PlayPlayer(Sounds.PlayerRun);
         }
     }
+
+    public void OnDeath()
+    {
+        Debug.Log("death initiated");
+        playerCollider.enabled = false;
+        grounded = false;
+        SetDrag(1f);
+        playerRb.AddForce(jumpForce / 2, ForceMode2D.Impulse);
+        animatorParameter.SetFloat("speed", 0);
+        animatorParameter.SetBool("crouch", false);
+        animatorParameter.SetBool("jump", false);
+        animatorParameter.SetBool("dead", true);
+        SoundManager.Instance?.PlayGameSfx(Sounds.PlayerDeath);
+        SoundManager.Instance?.PlayGameSFX2(Sounds.Lose);
+        deadSound = true;
+        DeadParticle.SimulateDeadParticle();
+    }
    
     // Update is called once per frame
     public void Update()
@@ -180,19 +200,7 @@ public class PlayerController : MonoBehaviour
         }
         else if(dead && !deadSound)
         {
-            Debug.Log("death initiated");
-            playerCollider.enabled = false;
-            grounded = false;
-            SetDrag(1f);
-            playerRb.AddForce(jumpForce / 2, ForceMode2D.Impulse);
-            animatorParameter.SetFloat("speed", 0);
-            animatorParameter.SetBool("crouch", false);
-            animatorParameter.SetBool("jump", false);
-            animatorParameter.SetBool("dead", true);
-            SoundManager.Instance?.PlayGameSfx(Sounds.PlayerDeath);
-            SoundManager.Instance?.PlayGameSFX2(Sounds.Lose);
-            deadSound = true;
-            DeadParticle.SimulateDeadParticle();
+            OnDeath();
         }
     }
 }
