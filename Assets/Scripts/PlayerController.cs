@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     //controls
     bool crouchingPress;
     bool crouchingRelease;
+    int crouchInput = 0;
     float jumpButton;
     float movement;
     int jumpTimes;
@@ -34,10 +35,13 @@ public class PlayerController : MonoBehaviour
     Vector2 scale;
     Vector2 size;
     Vector2 offset;
+    Vector2 defaultColliderOffset;
 
     private void Awake()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        playerCollider = gameObject.GetComponent<BoxCollider2D>();
+        defaultColliderOffset = playerCollider.offset;
     }
 
     // Start is called before the first frame update
@@ -52,7 +56,6 @@ public class PlayerController : MonoBehaviour
         dead = false;
         deadSound = false;
         lives = 3;
-        playerCollider = gameObject.GetComponent<BoxCollider2D>();
         Debug.Log("Starting Player");
     }
     void Run(float key)
@@ -92,7 +95,7 @@ public class PlayerController : MonoBehaviour
     void Jump(float jumpKey)
     {
         if (jumpKey == 0) jumpable = true;
-        if (jumpKey == 1 && jumpTimes > 0 && jumpable && playerRb.velocity.y < 0.1f)
+        if (jumpKey == 1 && jumpTimes > 0 && jumpable && !crouchingPress && playerRb.velocity.y < 0.1f)
         {
             isJumping = true;
             jumpable = false;
@@ -100,8 +103,8 @@ public class PlayerController : MonoBehaviour
             SetDrag(0f);
             playerRb.AddForce(jumpForce, ForceMode2D.Impulse);
             jumpTimes--;
-            animatorParameter.SetBool("jump", isJumping);
         }
+        if(!crouchingPress) animatorParameter.SetBool("jump", jumpKey == 1);
     }
 
     private void SetDrag(float dragValue)
@@ -125,21 +128,25 @@ public class PlayerController : MonoBehaviour
 
     void Crouch()
     {
+        if (Input.GetKeyDown(KeyCode.LeftControl)) crouchInput = 1;
+        else if (Input.GetKeyUp(KeyCode.LeftControl)) crouchInput = -1;
+        else crouchInput = 0;
 
-        if (crouchingPress)
+        if (crouchInput == 1)
         {
             animatorParameter.SetBool("crouch", true);
             /*Debug.Log(size);*/
-            playerCollider.offset = new Vector2(offset.x, 0.6f * offset.y);
             playerCollider.size = new Vector2(size.x, 0.6f * size.y);
-            
+            playerCollider.offset -= new Vector2(0f, 0.5f);
+            crouchingPress = true;
         }
-        else if (crouchingRelease)
+        else if (crouchInput == -1)
         {
             animatorParameter.SetBool("crouch", false);
             /*Debug.Log(size);*/
             playerCollider.size = new Vector2(size.x, 2.1f);
-            playerCollider.offset = new Vector2(offset.x, 0.98f);
+            playerCollider.offset = defaultColliderOffset;
+            crouchingPress = false;
         }
     }
 
@@ -192,11 +199,9 @@ public class PlayerController : MonoBehaviour
             updateDrag();
             movement = Input.GetAxisRaw("Horizontal");
             jumpButton = Input.GetAxisRaw("Vertical");
-            crouchingPress = Input.GetKeyDown(KeyCode.LeftControl);
-            crouchingRelease = Input.GetKeyUp(KeyCode.LeftControl);
+            Crouch();
             Run(movement);
             Jump(jumpButton);
-            Crouch();
         }
         else if(dead && !deadSound)
         {

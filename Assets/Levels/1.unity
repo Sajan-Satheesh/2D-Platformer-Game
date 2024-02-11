@@ -510,6 +510,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
         type: 3}
+      propertyPath: restartScreen
+      value: 
+      objectReference: {fileID: 726516072}
+    - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
+        type: 3}
       propertyPath: restartTrigger
       value: 
       objectReference: {fileID: 726516072}
@@ -618,6 +623,11 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
+        type: 3}
+      propertyPath: restartScreen
+      value: 
+      objectReference: {fileID: 726516072}
     - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
         type: 3}
       propertyPath: restartTrigger
@@ -3939,6 +3949,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
         type: 3}
+      propertyPath: restartScreen
+      value: 
+      objectReference: {fileID: 726516072}
+    - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
+        type: 3}
       propertyPath: restartTrigger
       value: 
       objectReference: {fileID: 726516072}
@@ -3969,6 +3984,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1616448809, guid: 83eb8097c234952418c7310bc88b8b02, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1616448809, guid: 83eb8097c234952418c7310bc88b8b02, type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1616448809, guid: 83eb8097c234952418c7310bc88b8b02, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 1616448809, guid: 83eb8097c234952418c7310bc88b8b02, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.75232637
+      objectReference: {fileID: 0}
+    - target: {fileID: 1616448809, guid: 83eb8097c234952418c7310bc88b8b02, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.62473303
+      objectReference: {fileID: 0}
+    - target: {fileID: 1616448809, guid: 83eb8097c234952418c7310bc88b8b02, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1626061969, guid: 83eb8097c234952418c7310bc88b8b02, type: 3}
       propertyPath: dead
       value: 1
@@ -4988,6 +5027,11 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
+        type: 3}
+      propertyPath: restartScreen
+      value: 
+      objectReference: {fileID: 726516072}
     - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
         type: 3}
       propertyPath: restartTrigger
