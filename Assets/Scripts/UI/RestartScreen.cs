@@ -30,8 +30,7 @@ public class RestartScreen : MonoBehaviour
 
     private void MainMenu()
     {
-        LevelManager.resume = true;
-        LevelManager.setCurrentLevel(SceneManager.GetActiveScene().buildIndex);
+        LevelManager.SetCurrentLevel(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(0);
     }
 }

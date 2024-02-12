@@ -14,7 +14,7 @@ public class LevelComplete : MonoBehaviour
         LevelSingleton.levelInstance?.SetLevelStatus(sceneName, LevelStatus.completed);
         if (sceneIndex < 5)
         {
-            LevelSingleton.levelInstance?.SetLevelStatus(SceneManager.GetSceneByBuildIndex(sceneIndex+1).name, LevelStatus.unlocked);
+            LevelSingleton.levelInstance?.SetLevelStatus((sceneIndex+1).ToString(), LevelStatus.unlocked);
         }
         sceneIndex++;
 
@@ -22,7 +22,7 @@ public class LevelComplete : MonoBehaviour
         {
             sceneIndex = 1;
         }
-        LevelManager.setCurrentLevel(sceneIndex);
+        LevelManager.SetCurrentLevel(sceneIndex);
         
         LevelCompScreen.SetActive(true);
         

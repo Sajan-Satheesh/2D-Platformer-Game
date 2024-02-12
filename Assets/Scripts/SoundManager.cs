@@ -1,26 +1,10 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public enum Sounds
-{
-    Click,
-    PlayerRun,
-    PlayerDeath,
-    EnemeyAttack,
-    EnemeyWalk,
-    Bgm,
-    Win,
-    Lose,
-    LevelStart
-}
 public class SoundManager : MonoBehaviour
 {
     private static SoundManager instance;
     public static SoundManager Instance { get { return instance; } }
-
-    
     public AudioSource soundEffect;
     public AudioSource Bgm;
     public AudioSource GameSoundEffects;
@@ -52,7 +36,7 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Audio not forund for " + sound);
+            Debug.Log("Audio not found for " + sound);
         }
     }
     public void PlaySfx(Sounds sound)
@@ -118,9 +102,3 @@ public class SoundManager : MonoBehaviour
     }
 }
 
-[Serializable]
-public class SoundType
-{
-    public Sounds soundName;
-    public  AudioClip audioClip;
-}

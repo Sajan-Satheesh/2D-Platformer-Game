@@ -38,7 +38,7 @@ public class ButtonClickCommands : MonoBehaviour
        
         if (LevelManager.resume == true)
         {
-            SceneManager.LoadScene(LevelManager.getCurrentLevel());
+            SceneManager.LoadScene(LevelManager.GetCurrentLevel());
         }
         else SceneManager.LoadScene(1);
         SoundManager.Instance?.PlaySfx(Sounds.Click);

@@ -16,7 +16,7 @@ public class Boundary : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerController player))
         {
-            if (thisEnemy.scale.x/Mathf.Abs(thisEnemy.scale.x) == player.transform.localScale.x / Mathf.Abs(player.transform.localScale.x))
+            if (thisEnemy != null && thisEnemy.scale.x/Mathf.Abs(thisEnemy.scale.x) == player.transform.localScale.x / Mathf.Abs(player.transform.localScale.x))
             {
                 thisEnemy.scale.x *= -1f;
             }

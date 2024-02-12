@@ -513,6 +513,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
         type: 3}
+      propertyPath: restartScreen
+      value: 
+      objectReference: {fileID: 1296479513}
+    - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
+        type: 3}
       propertyPath: restartTrigger
       value: 
       objectReference: {fileID: 1296479513}
@@ -4012,7 +4017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackingTimeInterval: 2
-  restartScreen: {fileID: 0}
+  restartScreen: {fileID: 1296479513}
 --- !u!114 &1233428871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4909,6 +4914,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
+        type: 3}
+      propertyPath: restartScreen
+      value: 
+      objectReference: {fileID: 1296479513}
     - target: {fileID: 8347851607062455420, guid: 75a3d924d7b833d4ab871854087fe022,
         type: 3}
       propertyPath: restartTrigger

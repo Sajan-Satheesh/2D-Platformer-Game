@@ -12,6 +12,7 @@ public class LevelSingleton : MonoBehaviour
         if(levelinstance == null)
         {
             levelinstance = this;
+            LevelManager.currentLevel = 1;
             DontDestroyOnLoad(gameObject);
         }
         else

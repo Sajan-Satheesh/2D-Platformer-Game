@@ -24,7 +24,7 @@ public class LevelCompScreen : MonoBehaviour
 
     private void ContinueGame()
     {
-        SceneManager.LoadScene(LevelManager.getCurrentLevel());
+        SceneManager.LoadScene(LevelManager.GetCurrentLevel());
     }
 
 }

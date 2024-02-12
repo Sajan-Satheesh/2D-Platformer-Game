@@ -1,21 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public enum LevelStatus
+﻿public static class LevelManager
 {
-    locked, unlocked, completed
-}
-public static class LevelManager
-{
-    public static int currentLevel;
-    public static bool resume = false;
+    public static int currentLevel = 1;
+    public static bool resume = true;
 
-    public static void setCurrentLevel(int level)
+    public static void SetCurrentLevel(int level)
     {
         currentLevel = level;
     }
-    public static int getCurrentLevel()
+    public static int GetCurrentLevel()
     {
         return currentLevel;
     }
